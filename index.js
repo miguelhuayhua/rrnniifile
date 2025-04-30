@@ -3,6 +3,9 @@ const path = require('path');
 const multer = require('multer');
 const app = express();
 const fs = require('fs');
+const morgan = require('morgan');
+app.use(morgan('dev')); // 'dev' es un formato predefinido para desarrollo
+
 app.use(express.json()); // Necesario para parsear JSON en las solicitudes
 // Middleware para procesar datos del formulario que no son archivos
 app.use(express.urlencoded({ extended: true }));
